@@ -21,4 +21,10 @@ public class User {
     private String image;
     @OneToMany(mappedBy = "user")
     List<Quote> quotes;
+
+    @ManyToMany
+    List<Tag> tags;
+
+    @ManyToMany
+    List<Author> authors;
 }
