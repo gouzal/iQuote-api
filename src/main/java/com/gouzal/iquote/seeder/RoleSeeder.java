@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class RoleSeeder extends AbstractTableSeeder {
-    final RoleService roleService;
+    final private RoleService roleService;
 
     @Autowired
     public RoleSeeder(RoleService roleService) {

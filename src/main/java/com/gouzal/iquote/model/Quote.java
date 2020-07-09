@@ -29,7 +29,7 @@ public class Quote {
     User user;
 
     @ManyToOne
-    User author;
+    Author author;
 
     @Override
     public boolean equals(Object o) {

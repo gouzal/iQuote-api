@@ -5,6 +5,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
@@ -18,6 +19,9 @@ public class User {
     private Long id;
     private String userName;
     private String password;
+    private String firstName;
+    private String lastName;
+    private Date birthdayDate;
     private String email;
     private String image;
     private Boolean enable;
