@@ -19,7 +19,6 @@ public class DataSourceConfig {
         String username = dbUri.getUserInfo().split(":")[0];
         String password = dbUri.getUserInfo().split(":")[1];
         String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + "/iquotedb"; //dbUri.getPath(); // "?sslmode=require"
-        log.info(dbUrl);
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
 
         dataSourceBuilder.url(dbUrl);
