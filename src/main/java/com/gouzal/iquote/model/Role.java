@@ -14,7 +14,7 @@ import java.util.List;
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private int Long;
     private String label;
 
     @ManyToMany

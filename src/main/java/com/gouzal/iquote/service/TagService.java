@@ -1,9 +1,9 @@
 package com.gouzal.iquote.service;
 
-import com.gouzal.quotes.models.Quote;
-import com.gouzal.quotes.models.Tag;
-import com.gouzal.quotes.repositories.IQuoteRepository;
-import com.gouzal.quotes.repositories.ITagRepository;
+import com.gouzal.iquote.model.Quote;
+import com.gouzal.iquote.model.Tag;
+import com.gouzal.iquote.repository.QuoteRepository;
+import com.gouzal.iquote.repository.TagRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,12 +14,12 @@ import java.util.List;
 public class TagService implements ITagService {
 
     @Autowired
-    private ITagRepository repository;
+    private TagRepository repository;
 
     @Autowired
-    private IQuoteRepository quoteRepository;
+    private QuoteRepository quoteRepository;
 
-    public Tag findById(int id) {
+    public Tag findById(long id) {
         return this.repository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Tag with Id:" + id + " Not Found"));
     }
@@ -34,13 +34,14 @@ public class TagService implements ITagService {
         return this.repository.save(tag);
     }
 
+
     @Override
-    public void deleteById(int id) {
+    public void deleteById(long id) {
         throw new RuntimeException("unsupported Operation");
     }
 
     @Override
-    public List<Tag> findByQuote(int quoteId) {
+    public List<Tag> findByQuote(long quoteId) {
         Quote quote = this.quoteRepository.findById(quoteId)
                 .orElseThrow(() -> new EntityNotFoundException("Quote with Id:" + quoteId + " Not Found"));
 

@@ -1,7 +1,7 @@
 package com.gouzal.iquote.service;
 
-import com.gouzal.quotes.models.Quote;
-import com.gouzal.quotes.repositories.IQuoteRepository;
+import com.gouzal.iquote.model.Quote;
+import com.gouzal.iquote.repository.QuoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,12 +15,10 @@ import java.util.List;
 public class QuoteService implements IQuoteService {
 
     @Autowired
-    private IQuoteRepository repository;
-    @Autowired
-    private JMSOperationImpl jmsOperation;
+    private QuoteRepository repository;
 
     @Override
-    public Quote findById(int id) {
+    public Quote findById(long id) {
         return this.repository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Quote with Id:" + id + " Not Found"));
     }
@@ -36,13 +34,12 @@ public class QuoteService implements IQuoteService {
     }
 
     @Override
-    public void deleteById(int id) {
+    public void deleteById(long id) {
         this.repository.deleteById(id);
     }
 
     @Transactional
     public Quote save(Quote quote) {
-        this.jmsOperation.sendMessage("look at this author:" + quote.getAuthor());
         return this.repository.save(quote);
     }
 }

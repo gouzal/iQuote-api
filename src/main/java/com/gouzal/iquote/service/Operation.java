@@ -1,14 +1,13 @@
 package com.gouzal.iquote.service;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface Operation<T> {
      List<T> findAll();
 
-     Optional<T> findById(Long id);
+     T findById(long id);
 
-     void save(T instance);
+     T save(T instance);
 
-     void deleteById(Long id);
+     void deleteById(long id);
 }

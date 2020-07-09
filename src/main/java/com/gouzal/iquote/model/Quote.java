@@ -3,6 +3,7 @@ package com.gouzal.iquote.model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.Objects;
 public class Quote {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
     private String citation;
     private boolean visible = true;
     @Temporal(TemporalType.TIMESTAMP)

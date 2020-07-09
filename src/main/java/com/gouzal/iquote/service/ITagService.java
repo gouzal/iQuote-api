@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface ITagService extends Operation<Tag> {
 
-    List<Tag> findByQuote(int quoteId);
+    List<Tag> findByQuote(long quoteId);
 
 }

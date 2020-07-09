@@ -1,7 +1,7 @@
 package com.gouzal.iquote.service;
 
-import com.gouzal.quotes.models.User;
-import com.gouzal.quotes.repositories.IUserRepository;
+import com.gouzal.iquote.model.User;
+import com.gouzal.iquote.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +12,9 @@ import java.util.List;
 public class UserService implements IUserService {
 
     @Autowired
-    private IUserRepository repository;
+    private UserRepository repository;
 
-
-    public User findById(int id) {
+    public User findById(long id) {
         return this.repository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("User with Id:" + id + " Not Found"));
     }
@@ -31,7 +30,7 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public void deleteById(int id) {
+    public void deleteById(long id) {
         throw new RuntimeException("unsupported Operation");
     }
 
