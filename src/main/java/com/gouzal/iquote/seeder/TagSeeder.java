@@ -1,16 +1,16 @@
 package com.gouzal.iquote.seeder;
 
 import com.gouzal.iquote.model.Tag;
-import com.gouzal.iquote.service.AuthorService;
+import com.gouzal.iquote.service.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TagSeeder extends AbstractTableSeeder {
-    final private AuthorService tagService;
+    final private TagService tagService;
 
     @Autowired
-    public TagSeeder(AuthorService tagService) {
+    public TagSeeder(TagService tagService) {
         this.tagService = tagService;
     }
 
