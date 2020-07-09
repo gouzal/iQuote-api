@@ -28,4 +28,7 @@ public class User {
 
     @ManyToMany
     List<Author> authors;
+
+    @ManyToMany
+    List<Role> roles;
 }
