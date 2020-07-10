@@ -23,12 +23,12 @@ public class QuoteController {
     }
 
     @GetMapping(value = "/api/quotes")
-    public ResponseEntity<List> list() {
-        return new ResponseEntity<List>(quoteService.findAll(), HttpStatus.OK);
+    public ResponseEntity<List<Quote>> list() {
+        return new ResponseEntity<>(quoteService.findAll(), HttpStatus.OK);
     }
 
     @GetMapping(value = "/api/quotes/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Quote> byId(@PathVariable long id) {
-        return new ResponseEntity<Quote>(quoteService.findById(id), HttpStatus.OK);
+        return new ResponseEntity<>(quoteService.findById(id), HttpStatus.OK);
     }
 }
