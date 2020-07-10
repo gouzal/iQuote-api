@@ -3,7 +3,6 @@ package com.gouzal.iquote.rest;
 import com.gouzal.iquote.model.Tag;
 import com.gouzal.iquote.service.TagService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -16,8 +15,12 @@ import java.util.List;
 @RestController
 @Slf4j
 public class TagController {
-    @Autowired
+    final
     TagService tagService;
+
+    public TagController(TagService tagService) {
+        this.tagService = tagService;
+    }
 
     @GetMapping(value = "/api/tags")
     public ResponseEntity<List> list() {
