@@ -22,12 +22,12 @@ public class AuthorController {
         this.authorService = authorService;
     }
 
-    @GetMapping(value = "/api/quotes")
+    @GetMapping(value = "/api/authors")
     public ResponseEntity<List<Author>> list() {
         return new ResponseEntity<>(authorService.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/api/quotes/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/api/authors/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Author> byId(@PathVariable long id) {
         return new ResponseEntity<>(authorService.findById(id), HttpStatus.OK);
     }

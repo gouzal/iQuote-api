@@ -22,12 +22,12 @@ public class RoleController {
         this.roleService = roleService;
     }
 
-    @GetMapping(value = "/api/tags")
+    @GetMapping(value = "/api/roles")
     public ResponseEntity<List<Role>> list() {
         return new ResponseEntity<>(roleService.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/api/tags/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/api/roles/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Role> byId(@PathVariable long id) {
         return new ResponseEntity<>(roleService.findById(id), HttpStatus.OK);
     }
