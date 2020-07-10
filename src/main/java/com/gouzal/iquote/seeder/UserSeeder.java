@@ -27,6 +27,7 @@ public class UserSeeder extends AbstractTableSeeder {
             user.setBirthdayDate(faker.date().birthday(18, 65));
             user.setFirstName(faker.name().firstName());
             user.setLastName(faker.name().lastName());
+            userService.save(user);
         }
     }
 }
