@@ -16,7 +16,7 @@ public class DatabaseSeeder {
     private final TagSeeder tagSeeder;
     private final QuoteSeeder quoteSeeder;
     private final AuthorSeeder authorSeeder;
-    @Value("${myapp.seeder.start:false}")
+    @Value("${com.gouzal.iquote.seeder.start:false}")
     private boolean enable;
 
     @Autowired
@@ -38,12 +38,14 @@ public class DatabaseSeeder {
 
     @PostConstruct
     public void runSeeders() {
-        this.roleSeeder.run();
-        this.userSeeder.run();
-        this.tagSeeder.run();
-        this.authorSeeder.run();
-        this.quoteSeeder.run();
-        log.info("SEEDER IS FINISHED");
+        if (enable) {
+            this.roleSeeder.run();
+            this.userSeeder.run();
+            this.tagSeeder.run();
+            this.authorSeeder.run();
+            this.quoteSeeder.run();
+            log.info("SEEDER IS FINISHED");
+        }
     }
 
 }
