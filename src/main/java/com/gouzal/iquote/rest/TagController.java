@@ -23,12 +23,12 @@ public class TagController {
     }
 
     @GetMapping(value = "/api/tags")
-    public ResponseEntity<List> list() {
-        return new ResponseEntity<List>(tagService.findAll(), HttpStatus.OK);
+    public ResponseEntity<List<Tag>> list() {
+        return new ResponseEntity<>(tagService.findAll(), HttpStatus.OK);
     }
 
     @GetMapping(value = "/api/tags/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Tag> byId(@PathVariable long id) {
-        return new ResponseEntity<Tag>(tagService.findById(id), HttpStatus.OK);
+        return new ResponseEntity<>(tagService.findById(id), HttpStatus.OK);
     }
 }
