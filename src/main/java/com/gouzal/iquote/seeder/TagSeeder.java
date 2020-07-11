@@ -16,6 +16,7 @@ public class TagSeeder extends AbstractTableSeeder {
 
     @Override
     public void run() {
+        this.tagService.truncate();
         final String[] tags = {"love", "life", "happiness", "friendship", "sadness", "sex", "religion", "philosophy"};
         for (int i = 0; i < tags.length; i++) {
             Tag tag = new Tag();

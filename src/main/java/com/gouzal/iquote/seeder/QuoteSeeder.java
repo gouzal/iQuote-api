@@ -34,6 +34,7 @@ public class QuoteSeeder extends AbstractTableSeeder {
 
     @Override
     public void run() {
+        this.quoteService.truncate();
         List<Author> authors = authorService.findAll();
         List<User> users = userService.findAll();
         List<Tag> tags = tagService.findAll();

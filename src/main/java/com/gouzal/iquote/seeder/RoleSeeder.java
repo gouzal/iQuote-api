@@ -16,6 +16,7 @@ public class RoleSeeder extends AbstractTableSeeder {
 
     @Override
     public void run() {
+        this.roleService.truncate();
         String[] roles = {"normal_user", "admin"};
         for (int i = 0; i < roles.length; i++) {
             Role role = new Role();

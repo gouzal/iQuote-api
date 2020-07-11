@@ -16,6 +16,7 @@ public class UserSeeder extends AbstractTableSeeder {
 
     @Override
     public void run() {
+        this.userService.truncate();
         for (int i = 0; i < 10; i++) {
             User user = new User();
             user.setEmail(faker.internet().emailAddress());

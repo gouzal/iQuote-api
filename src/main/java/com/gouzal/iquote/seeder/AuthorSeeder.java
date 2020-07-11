@@ -16,6 +16,7 @@ public class AuthorSeeder extends AbstractTableSeeder {
 
     @Override
     public void run() {
+        this.authorService.truncate();
         for (int i = 0; i < 4; i++) {
             Author author = new Author();
             author.setFullName(faker.name().fullName());
