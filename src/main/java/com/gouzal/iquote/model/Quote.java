@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 
 @NoArgsConstructor
 @Entity
@@ -33,7 +32,7 @@ public class Quote {
     @ManyToOne
     Author author;
 
-    @Override
+   /* @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Quote)) return false;
@@ -46,5 +45,5 @@ public class Quote {
     @Override
     public int hashCode() {
         return Objects.hash(getId(), getCitation(), getAuthor());
-    }
+    }*/
 }

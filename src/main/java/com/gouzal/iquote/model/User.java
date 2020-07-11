@@ -26,8 +26,9 @@ public class User {
     private String image;
     private Boolean enable;
     private Boolean lock;
-    @OneToMany(mappedBy = "user")
-    List<Quote> quotes;
+
+    /*@OneToMany(mappedBy = "user")
+    List<Quote> quotes;*/
 
     @ManyToMany
     List<Tag> tags;
