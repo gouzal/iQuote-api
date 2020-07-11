@@ -1,7 +1,8 @@
-package com.gouzal.iquote.service;
+package com.gouzal.iquote.service.Impl;
 
 import com.gouzal.iquote.model.Author;
 import com.gouzal.iquote.repository.AuthorRepository;
+import com.gouzal.iquote.service.operation.IAuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,9 +1,10 @@
-package com.gouzal.iquote.service;
+package com.gouzal.iquote.service.Impl;
 
 import com.gouzal.iquote.model.Quote;
 import com.gouzal.iquote.model.Tag;
 import com.gouzal.iquote.repository.QuoteRepository;
 import com.gouzal.iquote.repository.TagRepository;
+import com.gouzal.iquote.service.operation.ITagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

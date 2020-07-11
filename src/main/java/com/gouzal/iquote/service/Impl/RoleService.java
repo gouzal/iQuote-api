@@ -1,7 +1,8 @@
-package com.gouzal.iquote.service;
+package com.gouzal.iquote.service.Impl;
 
 import com.gouzal.iquote.model.Role;
 import com.gouzal.iquote.repository.RoleRepository;
+import com.gouzal.iquote.service.operation.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.gouzal.iquote.service;
+package com.gouzal.iquote.service.operation;
 
 import java.util.List;
 

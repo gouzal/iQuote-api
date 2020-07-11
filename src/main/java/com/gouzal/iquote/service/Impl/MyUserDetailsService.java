@@ -1,4 +1,4 @@
-package com.gouzal.iquote.service;
+package com.gouzal.iquote.service.Impl;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
