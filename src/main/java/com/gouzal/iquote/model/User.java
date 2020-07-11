@@ -14,6 +14,12 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = false)
 @Table(name = "\"user\"")
 public class User {
+    @ManyToMany
+    List<Tag> tags;
+    @ManyToMany
+    List<Author> authors;
+    @ManyToMany
+    List<Role> roles;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -23,19 +29,10 @@ public class User {
     private String lastName;
     private Date birthdayDate;
     private String email;
-    private String image;
-    private Boolean enable;
-    private Boolean lock;
 
     /*@OneToMany(mappedBy = "user")
     List<Quote> quotes;*/
-
-    @ManyToMany
-    List<Tag> tags;
-
-    @ManyToMany
-    List<Author> authors;
-
-    @ManyToMany
-    List<Role> roles;
+    private String image;
+    private Boolean enable;
+    private Boolean lock;
 }

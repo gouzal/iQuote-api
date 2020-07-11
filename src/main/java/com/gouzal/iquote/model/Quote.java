@@ -14,6 +14,13 @@ import java.util.List;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class Quote {
+    @JsonIgnore
+    @ManyToMany
+    List<Tag> tags;
+    @ManyToOne
+    User user;
+    @ManyToOne
+    Author author;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -21,16 +28,6 @@ public class Quote {
     private boolean visible = true;
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
-
-    @JsonIgnore
-    @ManyToMany
-    List<Tag> tags;
-
-    @ManyToOne
-    User user;
-
-    @ManyToOne
-    Author author;
 
    /* @Override
     public boolean equals(Object o) {

@@ -12,11 +12,11 @@ import java.util.List;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class Author {
+    @OneToMany(mappedBy = "author")
+    List<Quote> quotes;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String fullName;
-    @OneToMany(mappedBy = "author")
-    List<Quote> quotes;
 
 }

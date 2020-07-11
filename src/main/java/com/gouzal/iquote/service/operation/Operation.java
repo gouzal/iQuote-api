@@ -3,7 +3,7 @@ package com.gouzal.iquote.service.operation;
 import java.util.List;
 
 public interface Operation<T> {
-     List<T> findAll();
+    List<T> findAll();
 
      T findById(long id);
 
