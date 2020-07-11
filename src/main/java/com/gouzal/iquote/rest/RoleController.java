@@ -1,7 +1,7 @@
 package com.gouzal.iquote.rest;
 
 import com.gouzal.iquote.model.Role;
-import com.gouzal.iquote.service.RoleService;
+import com.gouzal.iquote.service.Impl.RoleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

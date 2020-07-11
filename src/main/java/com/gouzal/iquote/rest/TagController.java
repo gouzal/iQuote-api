@@ -1,7 +1,7 @@
 package com.gouzal.iquote.rest;
 
 import com.gouzal.iquote.model.Tag;
-import com.gouzal.iquote.service.TagService;
+import com.gouzal.iquote.service.Impl.TagService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

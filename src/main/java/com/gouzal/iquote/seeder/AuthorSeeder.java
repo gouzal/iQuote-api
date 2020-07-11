@@ -1,7 +1,7 @@
 package com.gouzal.iquote.seeder;
 
 import com.gouzal.iquote.model.Author;
-import com.gouzal.iquote.service.AuthorService;
+import com.gouzal.iquote.service.Impl.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

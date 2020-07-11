@@ -1,7 +1,7 @@
 package com.gouzal.iquote.seeder;
 
 import com.gouzal.iquote.model.User;
-import com.gouzal.iquote.service.UserService;
+import com.gouzal.iquote.service.Impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -21,7 +21,10 @@ public class UserSeeder extends AbstractTableSeeder {
             user.setEmail(faker.internet().emailAddress());
             user.setImage(faker.number().digits(10) + ".png");
             user.setPassword("pass");
-            user.setUserName(faker.name().username());
+            if (i == 0) {
+                user.setUserName("larbi");
+            }
+
             user.setEnable(true);
             user.setLock(false);
             user.setBirthdayDate(faker.date().birthday(18, 65));

@@ -4,10 +4,10 @@ import com.gouzal.iquote.model.Author;
 import com.gouzal.iquote.model.Quote;
 import com.gouzal.iquote.model.Tag;
 import com.gouzal.iquote.model.User;
-import com.gouzal.iquote.service.AuthorService;
-import com.gouzal.iquote.service.QuoteService;
-import com.gouzal.iquote.service.TagService;
-import com.gouzal.iquote.service.UserService;
+import com.gouzal.iquote.service.Impl.AuthorService;
+import com.gouzal.iquote.service.Impl.QuoteService;
+import com.gouzal.iquote.service.Impl.TagService;
+import com.gouzal.iquote.service.Impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

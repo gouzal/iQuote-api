@@ -1,7 +1,7 @@
 package com.gouzal.iquote.seeder;
 
 import com.gouzal.iquote.model.Tag;
-import com.gouzal.iquote.service.TagService;
+import com.gouzal.iquote.service.Impl.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

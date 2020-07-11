@@ -1,7 +1,7 @@
 package com.gouzal.iquote.seeder;
 
 import com.gouzal.iquote.model.Role;
-import com.gouzal.iquote.service.RoleService;
+import com.gouzal.iquote.service.Impl.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
