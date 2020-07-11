@@ -37,5 +37,8 @@ public class AuthorService implements IAuthorService {
         throw new RuntimeException("unsupported Operation");
     }
 
-
+    @Override
+    public void truncate() {
+        this.repository.truncate();
+    }
 }

@@ -10,4 +10,6 @@ public interface Operation<T> {
      T save(T instance);
 
      void deleteById(long id);
+
+     void truncate();
 }

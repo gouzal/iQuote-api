@@ -49,5 +49,9 @@ public class TagService implements ITagService {
         return quote.getTags();
     }
 
+    @Override
+    public void truncate() {
+        this.repository.truncate();
+    }
 
 }

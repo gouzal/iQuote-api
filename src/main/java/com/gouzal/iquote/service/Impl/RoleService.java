@@ -37,5 +37,9 @@ public class RoleService implements IRoleService {
         throw new RuntimeException("unsupported Operation");
     }
 
+    @Override
+    public void truncate() {
+        this.repository.truncate();
+    }
 
 }

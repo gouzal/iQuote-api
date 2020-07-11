@@ -43,4 +43,9 @@ public class QuoteService implements IQuoteService {
     public Quote save(Quote quote) {
         return this.repository.save(quote);
     }
+
+    @Override
+    public void truncate() {
+        this.repository.truncate();
+    }
 }

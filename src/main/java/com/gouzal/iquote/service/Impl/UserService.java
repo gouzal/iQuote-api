@@ -35,6 +35,11 @@ public class UserService implements IUserService {
         throw new RuntimeException("unsupported Operation");
     }
 
+    @Override
+    public void truncate() {
+        this.repository.truncate();
+    }
+
     /*@Override
     public User findFirstByLogin(String login) {
         return this.repository.findFirstByLogin(login);
