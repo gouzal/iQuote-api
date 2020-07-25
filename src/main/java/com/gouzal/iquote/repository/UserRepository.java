@@ -6,10 +6,13 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
+
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     @Modifying
-    @Query(value = "truncate table \"users\"", nativeQuery = true)
+    @Query(value = "truncate table \"users\" CASCADE", nativeQuery = true)
+    @Transactional
     void truncate();
 
     // User findFirstByLogin(String login);

@@ -6,9 +6,12 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
+
 @Repository
 public interface QuoteRepository extends JpaRepository<Quote, Long> {
     @Modifying
-    @Query(value = "truncate table quote", nativeQuery = true)
+    @Query(value = "truncate table quote CASCADE", nativeQuery = true)
+    @Transactional
     void truncate();
 }

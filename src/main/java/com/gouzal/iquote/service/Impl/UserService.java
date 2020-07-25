@@ -37,7 +37,7 @@ public class UserService implements IUserService {
 
     @Override
     public void truncate() {
-        this.repository.truncate();
+        //this.repository.truncate();
     }
 
     /*@Override

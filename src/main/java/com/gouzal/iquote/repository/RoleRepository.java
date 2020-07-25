@@ -6,9 +6,12 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
+
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Long> {
     @Modifying
-    @Query(value = "truncate table role", nativeQuery = true)
+    @Query(value = "truncate table role CASCADE", nativeQuery = true)
+    @Transactional
     void truncate();
 }
