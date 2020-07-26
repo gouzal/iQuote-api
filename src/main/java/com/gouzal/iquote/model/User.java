@@ -1,5 +1,7 @@
 package com.gouzal.iquote.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -12,6 +14,7 @@ import java.util.List;
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = false)
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @Table(name = "\"user\"")
 public class User {
     @ManyToMany
@@ -30,8 +33,8 @@ public class User {
     private Date birthdayDate;
     private String email;
 
-    /*@OneToMany(mappedBy = "user")
-    List<Quote> quotes;*/
+    @OneToMany(mappedBy = "user")
+    List<Quote> quotes;
     private String image;
     private Boolean enable;
     private Boolean lock;

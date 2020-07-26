@@ -42,7 +42,8 @@ public class QuoteSeeder extends AbstractTableSeeder {
             Quote quote = new Quote();
             quote.setAuthor(authors.get(faker.random().nextInt(0, authors.size() - 1)));
             quote.setUser(users.get(faker.random().nextInt(0, users.size() - 1)));
-            quote.setCitation(faker.lorem().paragraph());
+            String citation = faker.lorem().paragraph();
+            quote.setCitation(citation.substring(0, Math.min(citation.length(), 200)));
             quote.setVisible(true);
             quote.setCreatedAt(faker.date().past(3, TimeUnit.DAYS));
             quote.setTags(this.assignTags(tags));
