@@ -1,6 +1,7 @@
 package com.gouzal.iquote.model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,6 +17,7 @@ import java.util.List;
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Role {
     @ManyToMany
+    @JsonIgnore
     List<User> users;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -18,6 +18,7 @@ import java.util.List;
 public class Author {
 
     @OneToMany(mappedBy = "author")
+    @JsonIgnore
     List<Quote> quotes;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

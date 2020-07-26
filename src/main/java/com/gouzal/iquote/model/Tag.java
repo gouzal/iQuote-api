@@ -25,10 +25,10 @@ public class Tag {
     private Long id;
     private String value;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "tags")
     List<Quote> quotes;
 
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Tag)) return false;
