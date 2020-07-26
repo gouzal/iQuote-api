@@ -14,10 +14,10 @@ import java.util.List;
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = false)
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Author {
 
     @OneToMany(mappedBy = "author")
+    @JsonIgnore
     List<Quote> quotes;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

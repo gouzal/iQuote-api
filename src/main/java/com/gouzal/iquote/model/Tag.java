@@ -17,7 +17,7 @@ import java.util.Objects;
 @Data
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 
 public class Tag {
     @Id
@@ -25,10 +25,10 @@ public class Tag {
     private Long id;
     private String value;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "tags")
     List<Quote> quotes;
 
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Tag)) return false;

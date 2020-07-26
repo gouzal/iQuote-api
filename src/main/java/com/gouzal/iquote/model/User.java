@@ -1,6 +1,7 @@
 package com.gouzal.iquote.model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -18,10 +19,13 @@ import java.util.List;
 @Table(name = "\"user\"")
 public class User {
     @ManyToMany
+    @JsonIgnore
     List<Tag> tags;
     @ManyToMany
+    @JsonIgnore
     List<Author> authors;
     @ManyToMany
+    @JsonIgnore
     List<Role> roles;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -34,6 +38,7 @@ public class User {
     private String email;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     List<Quote> quotes;
     private String image;
     private Boolean enable;
